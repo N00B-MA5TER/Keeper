@@ -1,0 +1,265 @@
+*{
+    font-family: "Outfit", sans-serif;
+}
+
+.header {
+    background-color: rgb(255, 221, 0);
+}
+
+.header .nav-link{
+    background-color: white !important;
+    color: rgb(255, 221, 0) !important;
+}
+
+.header header{
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: left;
+    justify-content: space-between !important;
+}
+
+.header .text{
+    color: white;
+}
+
+.header svg{
+    padding-right: 2px;
+}
+
+.big-heading{
+    display: flex;
+    justify-content: center;
+    padding-top: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(255, 221, 0);
+    background: transparent;
+}
+
+.big-heading h1{
+    font-size: 7rem;
+    border-bottom: solid 2px rgb(255, 221, 0);
+}
+
+.redirect-links{
+    display: flex;
+    justify-content: center;
+}
+
+.redirect-links a{
+    text-decoration: none;
+    margin: 3%;
+}
+
+.redirectbtn{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 0.5rem 2rem;
+    background-color: white;
+    color: rgb(255, 221, 0);
+    border: 2px solid rgb(255, 221, 0);
+    border-radius: 50px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.redirectbtn:hover{
+    background-color:  rgb(255, 221, 0);
+    color: white;
+}
+
+.redirectbtn p{
+    margin-top: 16px;
+    font-size: large;
+}
+
+.medium-heading{
+    display: flex;
+    justify-content: center;
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(255, 221, 0);
+    background: transparent;
+    padding-bottom: 5px;
+}
+
+.medium-heading h1{
+    font-size: 5rem;
+    border-bottom: solid 2px rgb(255, 221, 0);
+}
+
+.login-failed{
+    display: flex;
+    justify-content: center;
+    color:red;
+}
+
+.alreadyregistered{
+    display: flex;
+    justify-content: center;
+    color:red;
+}
+
+.user-details .boxes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-top: 3px;
+}
+
+.user-details input{
+    padding: 0 10px 0 29px;
+    margin-bottom: 3%;
+    min-height: 50px;
+    border-radius: 50px;
+    border: 2px solid rgb(255, 221, 0);
+}
+
+.user-details input:focus{
+    outline: none;
+}
+
+.user-details button{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 0.5rem 2rem;
+    background-color: white;
+    color: rgb(255, 221, 0);
+    border: 1px solid rgb(255, 221, 0);
+    border-radius: 50px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.user-details button:hover{
+    background-color:  rgb(255, 221, 0);
+    color: white;
+}
+
+.user-details p{
+    text-align: center;
+    a { color: rgb(255, 221, 0); }
+    color: rgb(255, 221, 0);
+}
+
+.welcome-message{
+    display: flex;
+    justify-content: center;
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: rgb(255, 221, 0);
+}
+
+.note-input{
+    margin-left: 20%;
+    margin-right: 20%;
+    border: 1px solid rgb(255, 221, 0);
+    border-radius: 20px;
+    margin-bottom: 5%;
+}
+
+.note-input .elements{
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.note-input input{
+    margin-bottom: 3%;
+    border: 0px solid;
+    
+}
+.note-input input:focus{
+    outline: none;
+    border: none;
+}
+
+.note-input .note-title{
+    font-size: x-large;
+}
+
+.note-input .note-content{
+    font-size: large;
+    min-height: 100px;
+    vertical-align: top;
+}
+
+.note-input .note-addbtn{
+    border: 1px solid rgb(255, 221, 0);
+    border-radius: 10px;
+    color: rgb(255, 221, 0);
+    background: transparent;
+    margin-bottom: 1%;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.note-input .note-addbtn:hover{
+    background-color: rgb(255, 221, 0);
+    color: white;
+}
+
+.notes-list{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.notes-list .note-card{
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    margin-bottom: 1.5%;
+    border: 1px solid rgb(255, 221, 0);
+    border-radius: 10px;
+    min-width: 30%;
+}
+
+.note-card .everything{
+    padding: 3%;
+}
+
+.note-card .delete-btn{
+    border: 1px solid rgb(255, 221, 0);
+    border-radius: 10px;
+    color: rgb(255, 221, 0);
+    background: transparent;
+    margin-bottom: 1%;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.note-card svg{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.note-card .delete-btn:hover{
+    background-color: rgb(255, 221, 0);
+    color: white;
+}
+
+.footer-text{
+    display: flex;
+    justify-content: center;
+    color:  rgb(255, 221, 0);
+    padding-top: 6%;
+}
+
+body{
+    background-image: url("/images/keeper-background.jpg");
+
+    height: 100%;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border: none;
+    padding: 0%;
+}

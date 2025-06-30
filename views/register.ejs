@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header"> 
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"> 
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" class="bi bi-journal" viewBox="0 0 16 16">
+                <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"/>
+                <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z"/>
+                </svg>  
+                <span class="fs-4 text">Keeper</span>
+            </a> 
+            <ul class="nav nav-pills"> 
+                <li class="nav-item"><a href="/login" class="nav-link active" aria-current="page">Login</a></li>  
+            </ul> 
+        </header> 
+    </div>
+
+    <div class="medium-heading">
+        <h1>Register</h1>
+    </div>
+
+    <% if (isRegistered == true) { %>
+        <div class="alreadyregistered">
+            <p>Email already in use. Try logging in</p>
+        </div>
+    <% } %>
+    
+    <div class="user-details">
+        <form class="boxes" action="/register" method="post">
+            <input type="text" name="name" placeholder="Username" required/>
+            <input type="text" name="username" placeholder="Email" required/>
+            <input type="text" name="password" placeholder="Password" required/>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    
+    <div class="footer-text">
+        <footer>© 2025 Rajdeep Nandy, Created while Learning</footer>
+    </div>
+</body>
+</html>

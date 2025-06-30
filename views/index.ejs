@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keeper</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="header"> 
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"> 
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" class="bi bi-journal" viewBox="0 0 16 16">
+                <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"/>
+                <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z"/>
+                </svg>  
+                <span class="fs-4 text">Keeper</span>
+            </a> 
+            <ul class="nav nav-pills"> 
+                <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Logout</a></li>
+        </header> 
+    </div>
+
+    <% if (firstTime) { %>
+        <div class="welcome-message">
+            <h1>Welcome <%= name %>, let's get started!</h1>
+        </div>
+    <% } else { %>
+        <div class="welcome-message">
+            <h1>Welcome back <%= name %>!</h1>
+        </div>
+    <% } %>
+
+    <div class="note-input">
+        <form class="elements" action='/submit' method="post">
+            <input class="note-title" type="text" name="noteName" placeholder="Title" required/>
+            <input class="note-content" type="text" name="noteText" placeholder="Take a note..." required/>
+            <div class="add">
+                <input class="note-addbtn" type="submit" value="Add Note"/>
+            </div>
+        </form>
+    </div>
+
+    <section class="notes-list">
+        <% for( let i = 0; i < notes.length; i++ ) { %>
+            <div class="note-card">
+                <div class="everything">
+                    <div class="title">
+                        <h3><%= notes[i].notename %></h3>
+                    </div>
+                    <div class="text">
+                        <p><%= notes[i].notecontent %></p>
+                    </div>
+                    <button class="delete-btn" onclick="sendId(<%= notes[i].id %>, <%= userid %>)"><svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-trash' viewBox='0 0 16 16'> <path d='M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z'/> <path d='M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z'/> </svg></button>
+                </div>
+            </div>
+        <% } %>
+    </section>
+
+    <div class="footer-text">
+        <footer>© 2025 Rajdeep Nandy, Created while Learning</footer>
+    </div>
+
+    <script type="text/javascript">
+        function sendId(id, userid) {
+            fetch('/deleteNote/' + id + '/' + userid, {
+                method: 'DELETE'
+            }).then(res => {
+                 if (res.ok) {
+                    location.reload();
+                } else {
+                    console.error('Delete failed.')
+                }
+            }).catch((err) => {console.error(err)});
+        }
+    </script>
+</body>
+</html>
