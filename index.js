@@ -122,7 +122,7 @@ app.delete("/deleteNote/:id/:userid", async (req, res) => {
     let userid = req.params.userid;
     deleteNote(id, userid);
     notes = await reloadDB(userid);
-    res.render("index.ejs", {notes: notes, userid: userid});
+    res.render("index.ejs", {notes: notes, userid: userid, firstTime: firstTime, name: req.session.name});
 })
 
 function addNote(userid, noteName, noteText){
