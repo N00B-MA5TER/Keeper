@@ -6,9 +6,6 @@ Topics to be discussed:
 4) JSON of custom codes and error messages
 5) Authentication and authorization (Why we need both?)
 6) Sending token for every req (JSON Web tokens)
-7) Session handling, after session ends user should be redirected to login page and login process should be repeated
-<<<<<<< HEAD
+7) Session handling, after session ends user should be redirected to login page
 8) Hosting a website on github with my laptop as the server
-=======
-8) Hosting a website on github with my laptop as the server
->>>>>>> 11afeb30880ef912888c4f3f3a3aa4c66f88e94b
+
